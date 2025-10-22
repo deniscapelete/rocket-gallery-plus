@@ -7,7 +7,7 @@ import Text from "../../../components/text";
 import type { Photo } from "../../photos/models/photo";
 import SelectCheckboxIlustration from "../../../assets/images/select-checkbox.svg?react"
 import Skeleton from "../../../components/skeleton";
-import ImagePreview from "../../../components/image-preview";
+import PhotoImageSelectable from "../../photos/components/photo-image-selectable";
 
 interface AlbumNewDialog {
   trigger: React.ReactNode;
@@ -37,6 +37,10 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialog) {
       ]
     }
   ];
+  function handleTogglePhoto(selected: boolean, photoId: string) {
+    console.log(selected, photoId)
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
@@ -54,7 +58,7 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialog) {
               <div className="flex flex-wrap gap-2">
                 {Array.from({ length: 4 }).map((_, index) => (
                   <Skeleton key={`photo-loading-${index}`}
-                    className="w-20 h-20 rounded"
+                    className="w-20 h-20 rounded-lg"
                   />
                 ))}
               </div>
@@ -62,12 +66,15 @@ export default function AlbumNewDialog({ trigger }: AlbumNewDialog) {
 
             {!isLoadingPhotos && photos.length > 0 && (
               <div className="flex flex-wrap gap-2">
-                {photos.map(photo => <ImagePreview
-                  key={photo.id}
-                  src={`/images/${photo.imageId}`}
-                  title={photo.title}
-                  className="h-20 w-20"
-                />)}
+                {photos.map(photo => (
+                  <PhotoImageSelectable
+                    key={photo.id}
+                    src={`/images/${photo.imageId}`}
+                    title={photo.title}
+                    imageClassName="h-20 w-20"
+                    onSelectImage={(selected) => handleTogglePhoto(selected, photo.id)}
+                  />
+                ))}
               </div>
             )}
 
