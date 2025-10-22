@@ -12,7 +12,7 @@ export default function PageHome() {
           { id: '323', title: "album 3" }
         ]}
         className="mb-9"
-        loading
+
       />
 
       <PhotosList photos={[
