@@ -1,5 +1,42 @@
 {
-  "photos": [],
-  "albums": [],
-  "photosOnAlbums": []
+  "photos": [
+    {
+      "id": "d5b77e20-f9aa-4037-86b0-7567f4e5742e",
+      "title": "Foto um",
+      "albumsIds": [],
+      "imageId": "bdcefa61-0dcd-4600-9c38-a92801daafe0.png"
+    },
+    {
+      "id": "b7632dde-3bcf-4602-a027-882fa610eb3c",
+      "title": "Foto dois",
+      "albumsIds": [],
+      "imageId": "ad53895b-6276-4161-b476-db6fc53ec222.png"
+    },
+    {
+      "id": "553aa9f7-d580-4c18-b5b5-134472806cee",
+      "title": "Foto três",
+      "albumsIds": [],
+      "imageId": "47bd700d-3a54-4f0e-b176-c11afa16338c.png"
+    }
+  ],
+  "albums": [
+    {
+      "id": "decae691-bbee-47d9-9460-12780a5e8d8c",
+      "title": "Melhores fotos"
+    },
+    {
+      "id": "890f79be-ec4e-49d7-9344-e6e437e76760",
+      "title": "Viagens"
+    }
+  ],
+  "photosOnAlbums": [
+    {
+      "photoId": "d5b77e20-f9aa-4037-86b0-7567f4e5742e",
+      "albumId": "decae691-bbee-47d9-9460-12780a5e8d8c"
+    },
+    {
+      "photoId": "b7632dde-3bcf-4602-a027-882fa610eb3c",
+      "albumId": "decae691-bbee-47d9-9460-12780a5e8d8c"
+    }
+  ]
 }
