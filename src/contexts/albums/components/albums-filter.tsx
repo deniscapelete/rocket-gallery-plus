@@ -1,6 +1,7 @@
 import Button from "../../../components/button";
 import Skeleton from "../../../components/skeleton";
 import Text from "../../../components/text";
+import { usePhotos } from "../../photos/hooks/use-photos";
 import type { Album } from "../models/album";
 import cx from "classnames"
 
@@ -10,6 +11,7 @@ interface AlbumsFilterProps extends React.ComponentProps<"div"> {
 }
 
 export default function AlbumsFilter({ albums, loading, className, ...props }: AlbumsFilterProps) {
+  const { filters } = usePhotos()
 
   return (
     <div
@@ -21,11 +23,22 @@ export default function AlbumsFilter({ albums, loading, className, ...props }: A
 
         {!loading && (
           <>
-            <Button size="sm" className="cursor-pointer" variant="primary">
+            <Button
+              size="sm"
+              className="cursor-pointer"
+              variant={filters.albumId === null ? "primary" : "ghost"}
+              onClick={() => filters.setAlbumId(null)}
+            >
               Todos
             </Button>
             {albums.map(album =>
-              <Button key={album.id} size="sm" className="cursor-pointer" variant="ghost">
+              <Button
+                key={album.id}
+                size="sm"
+                className="cursor-pointer"
+                variant={filters.albumId === album.id ? "primary" : "ghost"}
+                onClick={() => filters.setAlbumId(album.id)}
+              >
                 {album.title}
               </Button>
             )}
