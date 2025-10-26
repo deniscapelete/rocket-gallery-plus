@@ -7,6 +7,7 @@ import ImagePreview from "../components/image-preview";
 import Button from "../components/button";
 import AlbumsListSelectable from "../contexts/albums/components/albums-list-selectable";
 import type { Photo } from "../contexts/photos/models/photo";
+import useAlbums from "../contexts/albums/hooks/use-albums";
 
 export default function PagePhotoDetails() {
   const { id } = useParams();
@@ -22,11 +23,7 @@ export default function PagePhotoDetails() {
       { id: '323', title: "album 3" }
     ]
   }
-  const albums = [
-    { id: '321', title: "album 1" },
-    { id: '322', title: "album 2" },
-    { id: '323', title: "album 3" }
-  ]
+  const { albums, isLoadingAlbums } = useAlbums();
 
   return (
     <Container>
@@ -65,7 +62,7 @@ export default function PagePhotoDetails() {
             Albuns
           </Text>
 
-          <AlbumsListSelectable albums={albums} photo={photo} loading={isLoadingPhoto} />
+          <AlbumsListSelectable albums={albums} photo={photo} loading={isLoadingAlbums} />
         </div>
       </div>
     </Container>
