@@ -37,7 +37,7 @@ export default function PhotosNavigator({
           <Button
             icon={ArrowRightIcon}
             variant="secondary"
-            disabled={!previousPhotoId}
+            disabled={!nextPhotoId}
             onClick={() => {
               navigate(`/fotos/${nextPhotoId}`)
             }}
