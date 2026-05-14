@@ -17,6 +17,12 @@
       "title": "Foto três",
       "albumsIds": [],
       "imageId": "47bd700d-3a54-4f0e-b176-c11afa16338c.png"
+    },
+    {
+      "id": "91fd08f5-e79e-4bf0-ad2a-a474a8ea8818",
+      "title": "Cod",
+      "albumsIds": [],
+      "imageId": "70fc6c6b-049d-4872-aeb7-d853e03aa9b4.png"
     }
   ],
   "albums": [
@@ -36,6 +42,10 @@
     },
     {
       "photoId": "b7632dde-3bcf-4602-a027-882fa610eb3c",
+      "albumId": "decae691-bbee-47d9-9460-12780a5e8d8c"
+    },
+    {
+      "photoId": "91fd08f5-e79e-4bf0-ad2a-a474a8ea8818",
       "albumId": "decae691-bbee-47d9-9460-12780a5e8d8c"
     }
   ]
