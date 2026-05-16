@@ -52,7 +52,7 @@ const start = async () => {
 	});
 
 	try {
-		const port = parseInt(process.env.PORT || "5799");
+		const port = parseInt(process.env.PORT || "3333");
 
     await fastify.listen({port, host: "0.0.0.0"});
     console.log(`🚀 Server running at http://localhost:${port}`);

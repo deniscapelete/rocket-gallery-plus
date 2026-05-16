@@ -6,6 +6,7 @@ import { NuqsAdapter } from "nuqs/adapters/react-router/v7"
 
 import PagePhotoDetails from "./pages/page-photo-details";
 import PageHome from "./pages/page-home";
+import { Toaster } from "sonner";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +14,9 @@ export default function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<NuqsAdapter>
+				<Toaster />
 				<BrowserRouter>
+
 					<Routes>
 						<Route element={<LayoutMain />}>
 							<Route path="/" element={<PageHome />} />
